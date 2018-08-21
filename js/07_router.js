@@ -6,14 +6,14 @@ const server = http.createServer(function (req,res) {
 
 	//substr函数来判断此时的开头
 	if(userurl.substr(0,9) == "/student/"){
-		var studendid =userurl.substr(9);
+		const studendid =userurl.substr(9);
 		if (/\d{10}/.test(studendid)) {
 			res.end("你要查询的学生学号为："+studendid);
 		}else{
 			res.end("学生学号位数不正确");
 		}
 	}else if(userurl.substr(0,9) == "/teacher/"){
-		var teacher =userurl.substr(9);
+		const teacher =userurl.substr(9);
 		if (/^\d{6}$/.test(teacher)) {
 			res.end("你要查询的老师学号为："+teacher);
 		}else{
